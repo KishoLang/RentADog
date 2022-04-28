@@ -1,0 +1,11 @@
+<%= simple_form_for(@dog) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :breed %>
+  <%= f.input :age %>
+  <%= f.input :gender %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', dogs_path %>
