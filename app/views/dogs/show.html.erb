@@ -4,4 +4,7 @@
 <li><%= @dog.gender %></li>
 <li><%= @dog.price %></li>
 <li><%= @dog.description %></li>
-<h6><%= @dog.user.email %></h6>
+<li><%= @dog.user.email %></li>
+<li><%= link_to "Rent out #{@dog.name}", dogs_path %></li>
+<li><%= link_to "See all dogs", dogs_path %></li>
+<li><%= link_to 'Take offer down', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></li>
