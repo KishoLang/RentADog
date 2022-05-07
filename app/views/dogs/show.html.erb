@@ -13,7 +13,19 @@
       <h6>Price: <%= @dog.price %> / hour</h6>
       <h6>Description: <%= @dog.description %></h6>
       <h6>Contact Owner: <%= @dog.user.email %></h6>
-      <h6><%= link_to "Rent out #{@dog.name}", dogs_path, :class => "btn btn-success" %></h6>
+      <h6><%# <%= link_to "Rent out #{@dog.name}", dog_bookings_path(dog_id: @dog.id, booking: Booking.new), method: :post, class: "btn btn-success" %></h6>
+       <h6><%# <%= link_to "Rent out #{@dog.name}", new_dog_booking_path(@dog.id), class: "btn btn-success" %></h6>
+
+        <%= simple_form_for [@dog, @booking] do |f| %>
+
+
+              <div class="btn btn-success p-2">
+                <!--<%= f.submit %> !-->
+                <%= f.button :submit, "Rent out #{@dog.name}" %>
+              </div>
+
+            <% end %>
+
       <h6><%= link_to "See all dogs", dogs_path, :class => "btn btn-success" %></h6>
       <h6><%= link_to 'Take offer down', @dog, :class => "btn btn-secondary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></h6>
     </div>
