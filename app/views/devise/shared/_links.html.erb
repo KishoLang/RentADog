@@ -1,18 +1,24 @@
 <%- if controller_name != 'sessions' %>
-  <div class="btn btn-success m-2">
+<div class="d-grid gap-2 col-6 mx-auto">
+  <div class="btn btn-outline-success m-2 btn-sm">
   <%= link_to "Log in", new_session_path(resource_name) %><br />
+  </div>
   </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-<div class="btn btn-warning m-2">
+<div class="d-grid gap-2 col-6 mx-auto">
+<div class="btn btn-outline-success m-2 btn-sm">
     <%= link_to "Create account", new_registration_path(resource_name) %><br />
+  </div>
   </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-<div class="btn btn-danger m-2">
+<div class="d-grid gap-2 col-6 mx-auto">
+<div class="btn btn-outline-success m-2 btn-sm">
   <%= link_to "My password is too difficult to remember", new_password_path(resource_name) %><br />
+  </div>
   </div>
 <% end %>
 
