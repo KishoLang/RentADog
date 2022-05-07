@@ -1,19 +1,21 @@
-<div class="title text-center p-2">
-<h3>Check out all these friendly dogs &#128054;</h3>
-<h6>They are all super friendly, promise!</h6>
-<h6>Maybe there were one or three incidences, but we're super legit!</h6>
-</div>
-<div class="content content d-flex justify-content-center">
-  <% @dogs.each do |dog| %>
-  <div class="card d-inline-flex p-2 m-2 text-center" style="width: 18rem;">
-    <h3><%= dog.name %></h3>
-    <h5><%= dog.breed %></h5>
-    <h6>Age: <%= dog.age %></h6>
-    <h6>€ / h: <%= dog.price %></h6>
-    <p><%= link_to "Show more", dog_path(dog), :class => "btn btn-success"%></p>
+<div class="index-bg">
+  <div class="text-center p-2">
+    <h3>Check out all these friendly dogs &#128054;</h3>
+    <h6>They are all super friendly, promise!</h6>
+    <h6>Maybe there were one or three incidences, but we're super legit!</h6>
   </div>
-  <% end %>
-</ul>
-</div>
+  <div class="content d-flex justify-content-center">
+    <% @dogs.each do |dog| %>
+    <div class="card d-inline-flex p-2 m-2 text-center" style="width: 18rem;">
+      <h3><%= dog.name %></h3>
+      <h5><%= dog.breed %></h5>
+      <h6>Age: <%= dog.age %></h6>
+      <h6>Cost: <%= dog.price %> € / hour</h6>
+      <p><%= link_to "Show more", dog_path(dog), :class => "btn btn-success"%></p>
+    </div>
+    <% end %>
+  </ul>
+  </div>
 
-<h3 class="text-center"><%= link_to "Go back", root_path, :class => "btn btn-link" %></h3>
+  <h3 class="text-center"><%= link_to "Go back", root_path, :class => "btn btn-link" %></h3>
+</div>

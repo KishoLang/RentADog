@@ -1,7 +1,6 @@
-//Import page-specific CSS files here.
 @import "home";
-.index-bg {
-  background: url("/assets/index/index-background.jpg");
+.show-bg {
+  background-image: url("/assets/index/index-background.jpg");
   background-size: cover;
   position: absolute;
   top: 0px;
