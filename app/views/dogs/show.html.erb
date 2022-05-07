@@ -6,6 +6,7 @@
   </div>
   <div class="content d-flex justify-content-center">
     <div class="card p-2 m-2 text-center" style="width: 18rem;">
+      <%= cl_image_tag @dog.photo.key, class: "dog-avatar" %>
       <h3><%= @dog.name %></h3>
       <h6>Breed: <%= @dog.breed %></h6>
       <h6>Age: <%= @dog.age %></h6>
