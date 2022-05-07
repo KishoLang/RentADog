@@ -6,7 +6,10 @@
   </div>
   <div class="content d-flex justify-content-center">
     <div class="card p-2 m-2 text-center" style="width: 18rem;">
+      <% if @dog.photo.key.nil? %>
+    <% else %>
       <%= cl_image_tag @dog.photo.key, class: "dog-avatar" %>
+    <% end %>
       <h3><%= @dog.name %></h3>
       <h6>Breed: <%= @dog.breed %></h6>
       <h6>Age: <%= @dog.age %></h6>
@@ -20,14 +23,14 @@
         <%= simple_form_for [@dog, @booking] do |f| %>
 
 
-              <div class="btn btn-success p-2">
+              <div class="btn btn-success m-2 p-0">
                 <!--<%= f.submit %> !-->
                 <%= f.button :submit, "Rent out #{@dog.name}" %>
               </div>
 
             <% end %>
 
-      <h6><%= link_to "See all dogs", dogs_path, :class => "btn btn-success" %></h6>
+      <h6><%= link_to "See all dogs", dogs_path, :class => "d-grid gap-2 col-6 mx-auto btn btn-success" %></h6>
       <h6><%= link_to 'Take offer down', @dog, :class => "btn btn-secondary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></h6>
     </div>
   </div>
