@@ -1,17 +1,21 @@
-<div class="title text-center p-2">
-<h3>This is <%= @dog.name %>&#x2764; </h3>
-</div>
-<div class="content d-flex justify-content-center">
-<div class="card p-2 m-2 text-center" style="width: 18rem;">
-<h3>Name: <%= @dog.name %></h3>
-<h6>Breed: <%= @dog.breed %></h6>
-<h6>Age: <%= @dog.age %></h6>
-<h6>Gender: <%= @dog.gender %></h6>
-<h6>Price: <%= @dog.price %></h6>
-<h6>Description: <%= @dog.description %></h6>
-<h6>Contact Owner: <%= @dog.user.email %></h6>
-<h6><%= link_to "Rent out #{@dog.name}", dogs_path, :class => "btn btn-success" %></h6>
-<h6><%= link_to "See all dogs", dogs_path, :class => "btn btn-success" %></h6>
-<h6><%= link_to 'Take offer down', @dog, :class => "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %></h6>
-</div>
+<div class="show-bg">
+  <div class="title text-center p-2">
+    <h3>Learn more about <%= @dog.name %>  &#129460;
+ &#128021;
+ </h3>
+  </div>
+  <div class="content d-flex justify-content-center">
+    <div class="card p-2 m-2 text-center" style="width: 18rem;">
+      <h3><%= @dog.name %></h3>
+      <h6>Breed: <%= @dog.breed %></h6>
+      <h6>Age: <%= @dog.age %></h6>
+      <h6>Gender: <%= @dog.gender %></h6>
+      <h6>Price: <%= @dog.price %> / hour</h6>
+      <h6>Description: <%= @dog.description %></h6>
+      <h6>Contact Owner: <%= @dog.user.email %></h6>
+      <h6><%= link_to "Rent out #{@dog.name}", dogs_path, :class => "btn btn-success" %></h6>
+      <h6><%= link_to "See all dogs", dogs_path, :class => "btn btn-success" %></h6>
+      <h6><%= link_to 'Take offer down', @dog, :class => "btn btn-secondary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></h6>
+    </div>
+  </div>
 </div>
