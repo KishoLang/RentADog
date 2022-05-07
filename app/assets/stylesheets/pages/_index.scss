@@ -2,7 +2,7 @@
 @import "home";
 @import "show";
 .index-bg {
-  background: url("/assets/index/index-background.jpg");
+  background: url('<%= image_path "dog13.jpg" %>');
   background-size: cover;
   position: absolute;
   top: 0px;
